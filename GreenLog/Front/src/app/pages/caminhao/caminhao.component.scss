@@ -1,0 +1,114 @@
+.caminhao-container {
+  min-height: 100vh;
+
+  /* Deixa o container como flex vertical para posicionar main-content e footer */
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  /* seu estilo atual */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: #f2fcf4;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, .5);
+  height: 120px;
+
+  .logo {
+    width: 100px;
+    margin: 0 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin: 0;
+    margin-right: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  button {
+    margin-right: 50px;
+    width: 120px;
+    height: 40px;
+  }
+}
+
+/* Faz o main-content crescer para preencher o espaço disponível */
+.main-content {
+  padding: 50px;
+  flex-grow: 1;  /* faz crescer e empurra o footer para baixo */
+
+  h2 {
+    margin-bottom: 16px;
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+
+    .box {
+      width: 400px;
+      height: 300px;
+      border: 1px solid #9eb0a2;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 6px rgba(0, 48, 0, 0.1);
+      background: #f2fcf4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      img {
+        width: 100px;
+        align-self: center;
+      }
+
+      p {
+        margin: 8px 0;
+        font-size: 16px;
+      }
+
+      p:nth-of-type(3) {
+        text-transform: capitalize;
+      }
+      
+
+      button {
+        align-self: flex-end;
+        padding: 8px 16px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  > button {
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  > button:hover {
+    background-color: #218838;
+  }
+}
+
+/* Estilo do footer para fixar na base */
+app-footer {
+  flex-shrink: 0; /* para não encolher */
+}

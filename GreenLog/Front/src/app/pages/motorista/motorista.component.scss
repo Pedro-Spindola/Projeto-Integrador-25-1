@@ -1,0 +1,180 @@
+.motorista-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  
+    .header {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      background-color: #f2fcf4;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+      height: 120px;
+  
+      .logo {
+        width: 100px;
+        margin: 0 20px;
+      }
+  
+      h1 {
+        font-size: 22px;
+        margin: 0;
+        margin-right: 20px;
+        width: 100%;
+        text-align: center;
+      }
+  
+      button {
+        margin-right: 50px;
+        width: 120px;
+        height: 40px;
+      }
+    }
+  
+    .main-content {
+      padding: 50px;
+      flex-grow: 1;
+  
+      h2 {
+        margin-bottom: 16px;
+      }
+  
+      .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 32px;
+  
+        .box {
+          width: 800px;
+          height: 100px;
+          border: 1px solid #9eb0a2;
+          border-radius: 12px;
+          padding: 16px;
+          box-shadow: 0 4px 6px rgba(0, 48, 0, 0.1);
+          background: #f2fcf4;
+  
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+  
+          p {
+            margin: 0;
+            font-size: 16px;
+          }
+  
+          .info {
+            display: flex;
+            flex-direction: column;
+          }
+  
+          button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+          }
+  
+          button:hover {
+            background-color: #0056b3;
+          }
+        }
+      }
+  
+      > button {
+        padding: 12px 24px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+  
+      > button:hover {
+        background-color: #218838;
+      }
+    }
+  
+    app-footer {
+      flex-shrink: 0;
+    }
+}
+form {
+    max-width: 500px;
+    margin: 32px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  
+    label {
+      font-weight: bold;
+    }
+  
+    input,
+    select {
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+  
+    input[disabled] {
+      background-color: #eee;
+      color: #555;
+    }
+  
+    .checkboxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+  
+      label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-weight: normal;
+        text-transform: capitalize;
+      }
+    }
+  
+    button {
+      padding: 9.6px 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  
+    button[type='submit'] {
+      background-color: #007bff;
+      color: white;
+    }
+  
+    button[type='submit']:hover {
+      background-color: #0056b3;
+    }
+  
+    button[type='button'] {
+      background-color: #6c757d;
+      color: white;
+    }
+  
+    button[type='button']:hover {
+      background-color: #5a6268;
+    }
+  
+    .excluir {
+      background-color: #dc3545;
+      color: white;
+      margin-top: 12px;
+    }
+  
+    .excluir:hover {
+      background-color: #b52a37;
+    }
+  }
+  
+  

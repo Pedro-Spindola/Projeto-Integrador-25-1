@@ -1,0 +1,37 @@
+<h2>{{ caminhao ? 'Editar caminhão' : 'Novo caminhão' }}</h2>
+
+<form (ngSubmit)="onSubmit()">
+  <label>Placa:</label>
+  <input [disabled]="!!caminhao" [(ngModel)]="placa" name="placa" required />
+
+  <label>Motorista:</label>
+  <select [(ngModel)]="motoristaSelecionadoCpf" name="motorista" required>
+    <option value="" disabled selected>Selecione...</option>
+    <option *ngFor="let m of motoristas" [value]="m.cpf">{{ m.nome }}</option>
+  </select>
+
+  <label>Tipo de Resíduo:</label>
+  <div class="checkboxes">
+    <label *ngFor="let r of residuos">
+      <input
+        type="radio"
+        name="residuo"
+        [value]="r"
+        [(ngModel)]="tipoResiduoSelecionado"
+        required
+      />
+      {{ r }}
+    </label>
+  </div>
+
+  <button type="submit" [disabled]="!isFormValid">Salvar</button>
+  <button type="button" (click)="cancelar.emit()">Cancelar</button>
+  <button
+    *ngIf="caminhao"
+    type="button"
+    class="excluir"
+    (click)="excluir.emit(caminhao.placa)"
+  >
+    Excluir
+  </button>
+</form>

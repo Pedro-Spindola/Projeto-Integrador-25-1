@@ -1,0 +1,84 @@
+.bairro-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: #f2fcf4;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .5);
+    height: 120px;
+  
+    .logo {
+      width: 100px;
+      margin: 0 20px;
+    }
+  
+    h1 {
+      font-size: 22px;
+      margin: 0;
+      margin-right: 20px;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .menu-button {
+      margin-right: 50px;
+      width: 120px;
+      height: 40px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  
+  .main-content {
+    padding: 50px;
+    flex-grow: 1;
+  
+    .bairro-box {
+      background-color: #f2fcf4;
+      border: 1px solid #9eb0a2;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 6px rgba(0, 48, 0, 0.1);
+  
+      .bairro-nome {
+        font-size: 20px;
+        margin-bottom: 16px;
+      }
+  
+      .ponto-box {
+        padding: 12px;
+        margin-bottom: 12px;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+  
+        p {
+          margin: 6px 0;
+          font-size: 16px;
+        }
+      }
+  
+      .nenhum {
+        font-style: italic;
+        color: #888;
+      }
+    }
+  }
+  
+  app-footer {
+    flex-shrink: 0;
+  }
+  

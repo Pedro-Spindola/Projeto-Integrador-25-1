@@ -1,0 +1,41 @@
+<div class="caminhao-container">
+  <header class="header">
+    <img src="assets/logo.png" alt="eggGestor Logo" class="logo" />
+    <h1>Gerenciamento de Caminhões</h1>
+
+    <button
+      *ngIf="!modoCadastroOuEdicao"
+      class="menu-button"
+      [routerLink]="['/']"
+    >
+      Menu
+    </button>
+  </header>
+  <main class="main-content">
+    <ng-container *ngIf="!modoCadastro; else cadastro">
+      <h2>Lista de todos os meus caminhões</h2>
+      <div class="grid">
+        <div class="box" *ngFor="let c of caminhoes">
+          <img [src]="getImagemResiduo(c.tipoResiduo)" alt="Ícone Caminhão" />
+          <p><strong>Placa:</strong> {{ c.placa }}</p>
+          <p><strong>Motorista:</strong> {{ c.motorista.nome }}</p>
+          <p><strong>Resíduo:</strong> {{ c.tipoResiduo }}</p>
+          <button (click)="editar(c)">Editar</button>
+        </div>
+      </div>
+      <button (click)="adicionar()">Adicionar novo caminhão</button>
+    </ng-container>
+
+    <ng-template #cadastro>
+      <app-cadastro-caminhao
+      [caminhao]="caminhaoEditando"
+      [placasExistentes]="placasExistentes"
+      (salvar)="salvar($event)"
+      (cancelar)="cancelar()"
+      (excluir)="excluir($event)"
+    />
+    </ng-template>
+  </main>
+
+  <app-footer />
+</div>

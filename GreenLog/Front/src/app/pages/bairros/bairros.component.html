@@ -1,0 +1,30 @@
+<div class="bairro-container">
+    <header class="header">
+        <img src="assets/logo.png" alt="eggGestor Logo" class="logo" />
+        <h1>Lista de Bairros</h1>
+
+        <button class="menu-button" [routerLink]="['/']">Menu</button>
+    </header>
+
+    <main class="main-content">
+        <div *ngFor="let bairro of bairros" class="bairro-box">
+        <h2 class="bairro-nome">{{ bairro.nomeBairro }}</h2>
+
+        <ng-container *ngIf="getPontosPorBairro(bairro.id).length; else nenhum">
+            <div *ngFor="let ponto of getPontosPorBairro(bairro.id)" class="ponto-box">
+            <p><strong>Ponto:</strong> {{ ponto.nome }}</p>
+            <p><strong>Resíduos:</strong> {{ ponto.tiposResiduoAceitos }}</p>
+            <p><strong>Responsável:</strong> {{ ponto.responsavel }}</p>
+            <p><strong>Telefone:</strong> {{ ponto.telefoneResponsavel }}</p>
+            </div>
+        </ng-container>
+
+        <ng-template #nenhum>
+            <p class="nenhum">Nenhum ponto de coleta para este bairro.</p>
+        </ng-template>
+        </div>
+    </main>
+
+    <app-footer />
+</div>
+  
